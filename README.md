@@ -54,4 +54,22 @@ flowchart TD
     C --> D[建立本地向量库]
     E[用户输入查询] --> F[向量检索相关简历内容]
     F --> G[语言模型生成回答]
+```
 
+---
+
+# 使用说明
+
+## 运行项目
+
+1. 打开终端（Terminal 或 CMD），进入项目目录：
+   ```bash
+   cd project1
+2.启动streamlit应用
+     ```bash
+   streamlit run interface.py
+
+## 联系方式
+- 项目负责人：陈博阳
+- 邮箱：1175716776@qq.com
+- GitHub：https://github.com/AhriOR
