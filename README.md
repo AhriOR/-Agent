@@ -55,11 +55,3 @@ flowchart TD
     E[用户输入查询] --> F[向量检索相关简历内容]
     F --> G[语言模型生成回答]
 
-
-## 使用说明
-
-1. 打开终端（Terminal 或 CMD），进入项目目录：
-
-```bash
-cd project1
-streamlit run interface.py
