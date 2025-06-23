@@ -61,15 +61,12 @@ flowchart TD
 # 使用说明
 
 ## 运行项目
-
 1. 打开终端（Terminal 或 CMD），进入项目目录：
-   ```bash
+2. 运行streamlit应用
+    ```bash
    cd project1
-2.启动streamlit应用
-     ```bash
    streamlit run interface.py
-
-## 联系方式
+  ## 联系方式
 - 项目负责人：陈博阳
 - 邮箱：1175716776@qq.com
 - GitHub：https://github.com/AhriOR
