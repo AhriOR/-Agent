@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <title>{{ resume.name }} - 个人简历</title>
+  <style>
+    /* 页面基础设置 */
+    body {
+      font-family: "SimSun", Arial, sans-serif;
+      max-width: 850px;
+      margin: 40px auto;
+      padding: 0 30px;
+      color: #333333;
+      background: #ffffff;
+      line-height: 1.5;
+    }
+    /* 主标题 */
+    h1 {
+      font-size: 36px;
+      margin-bottom: 5px;
+      border-bottom: 3px solid #100F0F33;
+      padding-bottom: 5px;
+      font-weight: 700;
+      color: #2a5bd7;
+    }
+    /* 一级小标题 */
+    h2 {
+      font-size: 22px;
+      margin-top: 45px;
+      margin-bottom: 15px;
+      border-bottom: 1.5px solid #100F0F;
+      padding-bottom: 6px;
+      color: #2a5bd7;
+      font-weight: 600;
+    }
+    /* 联系方式部分 */
+    .contact-info {
+      font-size: 15px;
+      color: #100F0F;
+      margin-bottom: 30px;
+    }
+    .contact-info span {
+      margin-right: 20px;
+    }
+    /* 每个模块的容器 */
+    .section {
+      margin-bottom: 30px;
+    }
+    /* 各条目标题 */
+    .item-title {
+      font-weight: 600;
+      font-size: 17px;
+      color: #100F0F;
+      margin-bottom: 3px;
+    }
+    /* 副标题，比如时间、职位 */
+    .item-subtitle {
+      font-style: italic;
+      color: #100F0F;
+      font-size: 13px;
+      margin-bottom: 6px;
+    }
+    /* 详情文本 */
+    .item-detail {
+      margin-bottom: 12px;
+      white-space: pre-wrap; /* 保留换行 */
+    }
+    /* 技能标签 */
+    .skills-list {
+      list-style: none;
+      padding-left: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .skills-list li {
+      background-color: ;
+      color: #fff;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 500;
+      user-select: none;
+    }
+    /* 证书列表 */
+    .cert-list {
+      padding-left: 20px;
+      list-style-type: disc;
+      color: #444444;
+    }
+  </style>
+</head>
+<body>
+  <!-- 姓名 -->
+  <h1>{{ resume.name }}</h1>
+
+  <!-- 联系方式 -->
+  <div class="contact-info">
+    <span>📧 {{ resume.email }}</span>
+    <span>📱 {{ resume.phone }}</span>
+  </div>
+
+  <!-- 教育背景 -->
+  <div class="section" id="education">
+    <h2>教育背景</h2>
+    {% for edu in resume.education %}
+    <div>
+      <p class="item-title">{{ edu.school }} — {{ edu.degree }}</p>
+      <p class="item-subtitle">{{ edu.major }} | {{ edu.year }}</p>
+      {% if edu.additional_info %}
+      <p class="item-detail">{{ edu.additional_info }}</p>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+
+  <!-- 项目经验 -->
+  <div class="section" id="projects">
+    <h2>项目经验</h2>
+    {% for project in resume.projects %}
+    <div>
+      <p class="item-title">{{ project.name }} <span style="font-weight:normal;">({{ project.time }})</span></p>
+      <p class="item-detail">{{ project.description }}</p>
+      {% if project.technologies %}
+      <p><strong>技术栈：</strong>{{ project.technologies | join(', ') }}</p>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+
+  <!-- 实践经历 -->
+  <div class="section" id="experience">
+    <h2>实践经历</h2>
+    {% for exp in resume.experience %}
+    <div>
+      <p class="item-title">{{ exp.company }} — {{ exp.position }}</p>
+      <p class="item-subtitle">{{ exp.period }}</p>
+      <p class="item-detail">{{ exp.detail }}</p>
+    </div>
+    {% endfor %}
+  </div>
+
+  <!-- 技能 -->
+  <div class="section" id="skills">
+    <h2>技能</h2>
+    <ul class="skills-list">
+      {% for skill in resume.skills %}
+      <li>{{ skill.name }}（{{ skill.level }}）</li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <!-- 证书 -->
+  <div class="section" id="certificates">
+    <h2>证书</h2>
+    <ul class="cert-list">
+      {% for cert in resume.certificates %}
+      <li>{{ cert.title }} — {{ cert.year }}{% if cert.issuer %}（{{ cert.issuer }}）{% endif %}</li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <!-- 比赛经历 -->
+  <div class="section" id="competitions">
+    <h2>比赛经历</h2>
+    {% for comp in resume.competitions %}
+    <div>
+      <p class="item-title">{{ comp.name }} — {{ comp.award }}</p>
+      <p class="item-subtitle">{{ comp.time }} | 角色：{{ comp.role }}</p>
+      <p class="item-detail">{{ comp.description }}</p>
+    </div>
+    {% endfor %}
+  </div>
+
+  <!-- 附加信息 -->
+  <div class="section" id="additional_info">
+    <h2>附加信息</h2>
+    <p>英语等级：{{ resume.additional_info.english_level }}</p>
+    <p>兴趣方向：{{ resume.additional_info.interests }}</p>
+  </div>
+</body>
+</html>
