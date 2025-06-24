@@ -10,7 +10,7 @@ from deal_function import pdf_loader, txt_loader, agent_response
 USER_DB_PATH = "user_db.csv"
 
 def main():
-    st.set_page_config(page_title='📄 简历问答助手', layout='centered')
+    st.set_page_config(page_title='📄 简历问答智能体', layout='centered')
 
 
     def local_css():
