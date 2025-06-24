@@ -70,3 +70,7 @@ flowchart TD
 - 项目负责人：陈博阳
 - 邮箱：1175716776@qq.com
 - GitHub：https://github.com/AhriOR
+
+## 网络要求
+
+该智能体需要在网络通畅的环境下运行，需要使用 VPN 进行连接。
