@@ -269,7 +269,7 @@ def main():
         """, unsafe_allow_html=True)
 
     local_css()
-    st.markdown("<h1 style='text-align:center;'>📄 简历问答助手</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align:center;'>📄 简历问答智能体</h1>", unsafe_allow_html=True)
     st.markdown("<p style='text-align:center; color: gray;'>从自然语言需求生成专业简历，支持注册、登录与文档上传</p>", unsafe_allow_html=True)
     st.markdown("---")
     # 📘 使用说明放在侧边栏
