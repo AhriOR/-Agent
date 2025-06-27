@@ -3,7 +3,7 @@ import pandas as pd
 import tempfile
 import glob
 import streamlit as st
-from langchain_chroma import Chroma
+from langchain.vectorstores import Chroma
 from agent_tool.embedding import TransformerEmbedding
 from deal_function import pdf_loader, txt_loader, agent_response
 
@@ -276,7 +276,7 @@ def main():
     with st.sidebar:
         st.markdown("## 📘 使用说明")
         st.markdown("""
-            **欢迎使用简历问答助手！**
+            **欢迎使用简历整合智能体！**
 
             **操作流程：**
             1. 🆕 注册 或 👤 登录账号  
