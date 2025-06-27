@@ -3,14 +3,14 @@ import pandas as pd
 import tempfile
 import glob
 import streamlit as st
-from langchain_chroma import Chroma
+from langchain.vectorstores import Chroma
 from agent_tool.embedding import TransformerEmbedding
 from deal_function import pdf_loader, txt_loader, agent_response
 
 USER_DB_PATH = "user_db.csv"
 
 def main():
-    st.set_page_config(page_title='📄 简历问答助手', layout='centered')
+    st.set_page_config(page_title='📄 简历整合智能体', layout='centered')
 
 
     def local_css():
@@ -269,14 +269,14 @@ def main():
         """, unsafe_allow_html=True)
 
     local_css()
-    st.markdown("<h1 style='text-align:center;'>📄 简历问答助手</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align:center;'>📄 简历整合智能体</h1>", unsafe_allow_html=True)
     st.markdown("<p style='text-align:center; color: gray;'>从自然语言需求生成专业简历，支持注册、登录与文档上传</p>", unsafe_allow_html=True)
     st.markdown("---")
     # 📘 使用说明放在侧边栏
     with st.sidebar:
         st.markdown("## 📘 使用说明")
         st.markdown("""
-            **欢迎使用简历问答助手！**
+            **欢迎使用简历整合智能体！**
 
             **操作流程：**
             1. 🆕 注册 或 👤 登录账号  
